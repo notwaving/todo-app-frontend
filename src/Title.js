@@ -4,14 +4,13 @@ class Title extends React.Component {
 
     render() {
       return (
-          <div>
-            <h1>This is my title</h1>
-            <h2> This is my subtitle</h2>
-          </div> 
+        <div className="row">
+          <div className="col-12">
+            <h1 id="title">To Do...</h1>
+          </div>
+        </div>
       );
     }
   }
-  
-  
-  export default Title;
-  
+
+export default Title;
