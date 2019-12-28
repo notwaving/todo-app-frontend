@@ -1,5 +1,8 @@
 import React from 'react';
 import Title from './Title';
+import MyForm from './MyForm';
+import TasksLeft from './TasksLeft';
+import TaskList from './TaskList';
 
 class App extends React.Component {
 
@@ -7,7 +10,7 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <Title />
-        <Form />
+        <MyForm />
         <TasksLeft />
         <TaskList />
       </div>
