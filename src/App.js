@@ -5,9 +5,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <Title />
-        
+        <Form />
+        <TasksLeft />
+        <TaskList />
       </div>
       
     );
