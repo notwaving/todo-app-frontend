@@ -16,54 +16,60 @@ class TaskList extends React.Component {
                         <div className="col-2"></div>
                     </div>
                 </div>
+            
                 <div className="task-list">
                     <div className="row">
                         <div className="col-4">
                             Wash dishes
-                    </div>
-                    <div className="col-4">
-                        Housework
-                    </div>
-                    <div className="col-2">
-                        <button className="btn-default">Edit</button></td>
-                    </div>
-                    <div className="col-2">
-                        <td><button className="btn-default">Delete</button></td>
-                    </div>
-                </div>
-            <br>
-                <div class="row">
-                    <div class="col-4">
-                        Email boss
-                    </div>
-                    <div class="col-4">
-                        Admin
-                    </div>
-                    <div class="col-2">
-                        <button class="btn-default">Edit</button></td>
-                    </div>
-                    <div class="col-2">
-                        <td><button class="btn-default">Delete</button></td>
+                        </div>
+                        <div className="col-4">
+                            Housework
+                        </div>
+                        <div className="col-2">
+                            <button className="btn-default">Edit</button>
+                        </div>
+                        <div className="col-2">
+                            <button className="btn-default">Delete</button>
+                        </div>
                     </div>
                 </div>
 
-            <br>
-                <div class="row">
-                    <div class="col-4">
-                        Plan dinner
-                    </div>
-                    <div class="col-4">
-                        Housework
-                    </div>
-                    <div class="col-2">
-                        <button class="btn-default">Edit</button></td>
-                    </div>
-                    <div class="col-2">
-                        <td><button class="btn-default">Delete</button></td>
+                <div className="task-list">
+                    <div className="row">
+                        <div className="col-4">
+                            Email Boss
+                        </div>
+                        <div className="col-4">
+                            Admin
+                        </div>
+                        <div className="col-2">
+                            <button className="btn-default">Edit</button>
+                        </div>
+                        <div className="col-2">
+                            <button className="btn-default">Delete</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-          
+
+                <div className="task-list">
+                    <div className="row">
+                        <div className="col-4">
+                            Plan Dinner
+                        </div>
+                        <div className="col-4">
+                            Housework
+                        </div>
+                        <div className="col-2">
+                            <button className="btn-default">Edit</button>
+                        </div>
+                        <div className="col-2">
+                            <button className="btn-default">Delete</button>
+                        </div>
+                    </div>
+                </div>
+             
+        </div>
+        
         )
     }
 }
