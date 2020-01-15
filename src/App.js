@@ -15,6 +15,14 @@ class App extends React.Component {
     ]
   }
 
+  deleteTask = (taskId) => {
+    const tasks = this.state.tasks;
+    const updatedTasks = tasks.filter(item => item.id !== taskId);
+    this.setState({
+      tasks: updatedTasks
+    });
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -22,7 +30,7 @@ class App extends React.Component {
         <MyForm />
         <TasksLeft tasksLeft={this.state.tasks.length} />
         <TaskListHeader />
-        <TaskList taskList={this.state.tasks}/>
+        <TaskList taskList={this.state.tasks} deleteTaskFunc={this.deleteTask}/>
       </div>
       
     );
