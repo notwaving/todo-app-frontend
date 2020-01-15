@@ -20,7 +20,7 @@ class Tasks extends React.Component {
                 <div className="task-list">
                     <div className="row">
                         <div className="col-4">
-                            Wash dishes
+                            {this.props.item.description}
                         </div>
                         <div className="col-4">
                             Housework
@@ -34,39 +34,7 @@ class Tasks extends React.Component {
                     </div>
                 </div>
 
-                <div className="task-list">
-                    <div className="row">
-                        <div className="col-4">
-                            Email Boss
-                        </div>
-                        <div className="col-4">
-                            Admin
-                        </div>
-                        <div className="col-2">
-                            <button className="btn-default">Edit</button>
-                        </div>
-                        <div className="col-2">
-                            <button className="btn-default">Delete</button>
-                        </div>
-                    </div>
-                </div>
 
-                <div className="task-list">
-                    <div className="row">
-                        <div className="col-4">
-                            Plan Dinner
-                        </div>
-                        <div className="col-4">
-                            Housework
-                        </div>
-                        <div className="col-2">
-                            <button className="btn-default">Edit</button>
-                        </div>
-                        <div className="col-2">
-                            <button className="btn-default">Delete</button>
-                        </div>
-                    </div>
-                </div>
              
         </div>
         
