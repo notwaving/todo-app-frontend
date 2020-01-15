@@ -20,7 +20,7 @@ class App extends React.Component {
         <Title />
         <MyForm />
         <TasksLeft tasksLeft={this.state.tasks.length} />
-        <TaskList />
+        <TaskList taskList={this.state.tasks}/>
       </div>
       
     );
