@@ -19,7 +19,7 @@ class App extends React.Component {
       <div className="container-fluid">
         <Title />
         <MyForm />
-        <TasksLeft />
+        <TasksLeft tasksLeft={this.state.tasks.length} />
         <TaskList />
       </div>
       
