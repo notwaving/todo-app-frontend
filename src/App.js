@@ -16,21 +16,43 @@ class App extends React.Component {
   }
 
   deleteTask = (taskId) => {
+
     const tasks = this.state.tasks;
+
     const updatedTasks = tasks.filter(item => item.id !== taskId);
+
     this.setState({
       tasks: updatedTasks
     });
+  }
+
+  addTask = (taskDescription, taskCategory) => {
+
+    const taskToAdd = {
+      id: 7,
+      description: taskDescription,
+      category: taskCategory,
+      completed: false
+    };
+
+    const currentTasks = this.state.tasks;
+
+    currentTasks.push(taskToAdd);
+
+    this.setState({
+      tasks: currentTasks
+    });
+
   }
 
   render() {
     return (
       <div className="container-fluid">
         <Title />
-        <MyForm />
+        <MyForm addTaskFunc={this.addTask} />
         <TasksLeft tasksLeft={this.state.tasks.length} />
         <TaskListHeader />
-        <TaskList taskList={this.state.tasks} deleteTaskFunc={this.deleteTask}/>
+        <TaskList taskList={this.state.tasks} deleteTaskFunc={this.deleteTask} />
       </div>
       
     );

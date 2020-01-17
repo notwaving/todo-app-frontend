@@ -2,6 +2,10 @@ import React from 'react';
 
 class MyForm extends React.Component {
 
+    addTask = () => {
+      this.props.addTaskFunc('Grocery shop');
+    }
+
     render() {
       return (
         <form>
@@ -14,7 +18,9 @@ class MyForm extends React.Component {
                 <div className="col-sm-4">
                 <input type="text" className="form-control" id="inputCategory" placeholder="Optional"/>
                 </div>
-                <button type="submit" className="col-sm-1 btn btn-outline-primary mb-2">Add</button>
+                <button type="submit" className="col-sm-1 btn btn-outline-primary mb-2" onClick={this.addTask}>
+                  Add
+                </button>
             </div>        
         </form>        
       )
