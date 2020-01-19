@@ -28,7 +28,7 @@ class MyForm extends React.Component {
       return (
         <form>
             <div className="form-group row"> 
-                <label for="inputTask" className="col-sm-1 col-form-label">New Task</label>
+                <label htmlFor="inputTask" className="col-sm-1 col-form-label">New Task</label>
                 <div className="col-sm-4">
                 <input 
                   type="text" 
@@ -38,7 +38,7 @@ class MyForm extends React.Component {
                   onChange={this.taskDescriptionChanged}
                 />
                 </div>
-                <label for="inputTask" className="col-sm-1 col-form-label">Category</label>
+                <label htmlFor="inputTask" className="col-sm-1 col-form-label">Category</label>
                 <div className="col-sm-4">
                 <input 
                   type="text" 
