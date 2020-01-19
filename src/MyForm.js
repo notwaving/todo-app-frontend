@@ -10,15 +10,27 @@ class MyForm extends React.Component {
   addTask = (event) => {
     event.preventDefault();
     this.props.addTaskFunc(this.state.taskDescription, this.state.taskCategory);
-}
+  }
+
+  taskDescriptionChanged = (event) => {
+    this.setState({
+      taskDescription: event.target.value
+    });
+  }
 
     render() {
       return (
         <form>
-            <div className="form-group row">
+            <div className="form-group row"> 
                 <label for="inputTask" className="col-sm-1 col-form-label">New Task</label>
                 <div className="col-sm-4">
-                <input type="text" className="form-control" id="inputText" placeholder="Type here"/>
+                <input 
+                  type="text" 
+                  className="form-control" 
+                  id="inputText" 
+                  placeholder="Type here"
+                  onChange={this.taskDescriptionChanged}
+                />
                 </div>
                 <label for="inputTask" className="col-sm-1 col-form-label">Category</label>
                 <div className="col-sm-4">
