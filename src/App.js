@@ -26,29 +26,25 @@ class App extends React.Component {
     });
   }
 
-    addTask = (event) => {
-      event.preventDefault();
-      this.props.addTaskFunc('Grocery shop');
+
+  addTask = (taskDescription, taskCategory) => {
+
+    const taskToAdd = {
+      id: 7,
+      description: taskDescription,
+      category: taskCategory,
+      completed: false
     };
 
-  // addTask = (taskDescription, taskCategory) => {
+    const currentTasks = this.state.tasks;
 
-  //   const taskToAdd = {
-  //     id: 7,
-  //     description: taskDescription,
-  //     category: taskCategory,
-  //     completed: false
-  //   };
+    currentTasks.push(taskToAdd);
 
-  //   const currentTasks = this.state.tasks;
+    this.setState({
+      tasks: currentTasks
+    });
 
-  //   currentTasks.push(taskToAdd);
-
-  //   this.setState({
-  //     tasks: currentTasks
-  //   });
-
-  // }
+  }
 
   render() {
     return (

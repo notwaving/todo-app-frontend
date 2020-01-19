@@ -2,9 +2,10 @@ import React from 'react';
 
 class MyForm extends React.Component {
 
-    addTask = () => {
-      this.props.addTaskFunc('Grocery shop');
-    }
+  addTask = (event) => {
+    event.preventDefault();
+    this.props.addTaskFunc('Grocery shop', 'Some Category');
+}
 
     render() {
       return (
