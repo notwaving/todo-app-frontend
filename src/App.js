@@ -4,15 +4,15 @@ import MyForm from './MyForm';
 import TasksLeft from './TasksLeft';
 import TaskListHeader from './TaskListHeader';
 import TaskList from './TaskList';
-const uuidv4 = require('uuid/v4');
+import uuidv4 from 'uuid/v4';
 
 class App extends React.Component {
 
   state = {
     tasks: [
-      { id: 1, description: "Do yoga", category: "Health", completed: false },
-      { id: 2, description: "Put on laundry", category: "Housework", completed: false },
-      { id: 3, description: "Email Beckie", category: "Admin", completed: false }
+      { id: uuidv4(), description: "Do yoga", category: "Health", completed: false },
+      { id: uuidv4(), description: "Put on laundry", category: "Housework", completed: false },
+      { id: uuidv4(), description: "Email Beckie", category: "Admin", completed: false }
     ]
   }
 
