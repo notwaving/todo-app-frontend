@@ -2,9 +2,14 @@ import React from 'react';
 
 class MyForm extends React.Component {
 
+  state = {
+    taskDescription: "Your task here",
+    taskCategory: "Your category here"
+  }
+
   addTask = (event) => {
     event.preventDefault();
-    this.props.addTaskFunc('Grocery shop', 'Some Category');
+    this.props.addTaskFunc(this.state.taskDescription, this.state.taskCategory);
 }
 
     render() {
