@@ -18,6 +18,12 @@ class MyForm extends React.Component {
     });
   }
 
+  taskCategoryChanged = (event) => {
+    this.setState({
+      taskDescription: event.target.value
+    });
+  }
+
     render() {
       return (
         <form>
@@ -34,7 +40,13 @@ class MyForm extends React.Component {
                 </div>
                 <label for="inputTask" className="col-sm-1 col-form-label">Category</label>
                 <div className="col-sm-4">
-                <input type="text" className="form-control" id="inputCategory" placeholder="Optional"/>
+                <input 
+                  type="text" 
+                  className="form-control" 
+                  id="inputCategory" 
+                  placeholder="Optional"
+                  onChange={this.taskCategoryChanged}
+                />
                 </div>
                 <button type="submit" className="col-sm-1 btn btn-outline-primary mb-2" onClick={this.addTask}>
                   Add
