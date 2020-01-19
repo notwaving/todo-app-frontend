@@ -31,7 +31,7 @@ class App extends React.Component {
   addTask = (taskDescription, taskCategory) => {
 
     const taskToAdd = {
-      id: 7,
+      id: uuidv4(),
       description: taskDescription,
       category: taskCategory,
       completed: false
