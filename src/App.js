@@ -37,6 +37,9 @@ class App extends React.Component {
       completed: false
     };
 
+    console.log("Adding task");
+    console.log(taskToAdd);
+
     const currentTasks = this.state.tasks;
 
     currentTasks.push(taskToAdd);
