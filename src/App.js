@@ -42,7 +42,7 @@ class App extends React.Component {
 
     // Update state to reflect changes made to the task
     this.setState({
-      tasks: updatedTasks
+      tasks: tasks
     })
   }
 
