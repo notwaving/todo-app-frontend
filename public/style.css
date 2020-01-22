@@ -40,8 +40,10 @@ html, body {
     font-family: Arial, Helvetica, sans-serif
 }
 
-
-
 btn-default {
     background-color: black;
+}
+
+.completedTask {
+    text-decoration: line-through;
 }
