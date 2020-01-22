@@ -32,7 +32,7 @@ class Tasks extends React.Component {
 							{description}
 						</div>
 						<div className="col-4">
-							{this.props.item.category}
+							{category}
 						</div>
 						<div className="col-2">
 							<button className="btn btn-info" onClick={this.editClicked}>
