@@ -27,6 +27,9 @@ class App extends React.Component {
     });
   }
 
+  editTaskFunc = (taskID) => {
+    alert(`You want to edit ${taskID} from state/App`);
+  }
 
   addTask = (taskDescription, taskCategory) => {
 
