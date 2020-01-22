@@ -7,8 +7,7 @@ class Tasks extends React.Component {
     }
 
     editClicked= () => {
-        alert(`Task ID is: ${this.props.item.id}` )
-        // Would like to render a version of MyForm, displaying it already filled out with description and category
+        this.props.editTaskFunc(this.props.item.id)
     }
 
     render() { 

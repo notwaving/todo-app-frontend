@@ -57,9 +57,13 @@ class App extends React.Component {
         <MyForm addTaskFunc={this.addTask} />
         <TasksLeft tasksLeft={this.state.tasks.length} />
         <TaskListHeader />
-        <TaskList taskList={this.state.tasks} deleteTaskFunc={this.deleteTask} />
+        <TaskList 
+          taskList={this.state.tasks} 
+          deleteTaskFunc={this.deleteTask} 
+          editTaskFunc={this.editTaskFunc} 
+        />
       </div>
-      
+
     );
   }
 
