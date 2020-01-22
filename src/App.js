@@ -28,7 +28,22 @@ class App extends React.Component {
   }
 
   editTaskFunc = (taskID) => {
-    alert(`You want to edit ${taskID} from state/App`);
+    // Find the task that needs to be updated
+    const tasks = this.state.tasks; // Array of tasks
+    for(let i = 0; i < tasks.length; i++) {
+      const task = tasks[i];
+      
+      if(task.id === taskID) {
+        // Update the property (or properties) on the identified task
+        task.completed = true;
+        break;
+      }
+    }
+
+    // Update state to reflect changes made to the task
+    this.setState({
+      tasks: updatedTasks
+    })
   }
 
   addTask = (taskDescription, taskCategory) => {
