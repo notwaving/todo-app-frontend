@@ -28,12 +28,12 @@ class Tasks extends React.Component {
 			<div>
 				<div className="task-list">
 					<div className="row">
-						<div className="col-4">
+						{/* <div className="col-4"> */}
 							{description}
-						</div>
-						<div className="col-4">
+						{/* </div>
+						<div className="col-4"> */}
 							{category}
-						</div>
+						{/* </div> */}
 						<div className="col-2">
 							<button className="btn btn-info" onClick={this.editClicked}>
 								Edit
