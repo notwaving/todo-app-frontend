@@ -1,7 +1,7 @@
 # Sam's To Do App - Frontend
 
 This is the front end of a To Do app, completed as part of the BBC's Step in to Tech course with
-![alt Tech Returners](https://tinyurl.com/uxxyuwh)
+![Tech Returners](https://www.pro-manchester.co.uk/wp-content/uploads/2019/02/tr_logo_purple-300x164.png)
 (https://www.techreturners.com/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
