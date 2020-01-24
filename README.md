@@ -27,4 +27,4 @@ This runs the app in development mode. If it doesn't happen automatically, open 
 
 The page will reload if you make edits.
 
-6. To stop the app, `ctrl` + `C` on Mac, or `command` + `C` on Windows <br />
+5. To stop the app, `ctrl` + `C` on Mac, or `command` + `C` on Windows <br />
