@@ -5,14 +5,26 @@ This is the front end of a to do app, completed as part of the BBC's Step in to 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## To run the app locally
+## Technologies used in this project:
 
-In the project directory, run `npm start`
+- HTML
+- CSS
+- Bootstrap
+- JavaScript
+- ReactJS
 
-This runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## To run the app locally:
 
-The page will reload if you make edits.<br />
+1. Install [Node.js](https://nodejs.org/en/) if it is not already on your machine.
 
+2. Clone and download this repository
 
-To stop the app, `ctrl` + `C` on Mac, or `command` + C on Windows <br />
+3. Install dependencies with `npm install`
+
+4. In the project directory run `npm start`
+
+This runs the app in development mode. If it doesn't happen automatically, open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.
+
+6. To stop the app `ctrl` + `C` on Mac, or `command` + `C` on Windows <br />
