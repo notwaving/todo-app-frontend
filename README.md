@@ -23,8 +23,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 4. In the project directory run `npm start`
 
-This runs the app in development mode. If it doesn't happen automatically, open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+..This runs the app in development mode. If it doesn't happen automatically, open [http://localhost:3000](http://localhost:3000) to view it in the browser...
 
-The page will reload if you make edits.
+..The page will reload if you make edits...
 
-6. To stop the app `ctrl` + `C` on Mac, or `command` + `C` on Windows <br />
+6. To stop the app, `ctrl` + `C` on Mac, or `command` + `C` on Windows <br />
