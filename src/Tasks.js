@@ -20,7 +20,7 @@ class Tasks extends React.Component {
 			category = <div className="col-4 completedTask"> {this.props.item.category}</div>
 			} 
 			else {
-				description = <div className="col-4"> {this.props.item.description} {this.props.item.category} </div>
+				description = <div className="col-4"> {this.props.item.description} </div>
 				category = <div className="col-4"> {this.props.item.category} </div>
 			}
 		
