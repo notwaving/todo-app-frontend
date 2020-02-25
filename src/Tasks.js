@@ -36,12 +36,12 @@ class Tasks extends React.Component {
 						{/* </div> */}
 						<div className="col-2">
 							<button className="btn btn-info" onClick={this.editClicked}>
-								Edit
+								Completed
               </button>
 						</div>
 						<div className="col-2">
 							<button className="btn btn-success" onClick={this.doneClicked}>
-								Done
+								Delete
               </button>
 						</div>
 					</div>
