@@ -15,11 +15,13 @@ html, body {
     font-style: italic;
     color: rgb(31, 122, 113);
     font-weight: bold;
+    padding: 30px;
 }
 
 #tasks-left {
     color: rgb(31, 122, 113);
     font-size: 1.6em;
+    padding: 30px;
 }
 
 .task-list-header {
