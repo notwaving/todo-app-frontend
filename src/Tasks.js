@@ -16,12 +16,12 @@ class Tasks extends React.Component {
 		let category;
 
     if (this.props.item.completed) {
-			description = <div className="col-4 completedTask"> {this.props.item.description} </div>
-			category = <div className="col-4 completedTask"> {this.props.item.category}</div>
+			description = <div className="col-4 completedTask"> {this.props.item.taskDescription} </div>
+			category = <div className="col-4 completedTask"> {this.props.item.taskCategory}</div>
 			} 
 			else {
-				description = <div className="col-4"> {this.props.item.description} </div>
-				category = <div className="col-4"> {this.props.item.category} </div>
+				description = <div className="col-4"> {this.props.item.taskDescription} </div>
+				category = <div className="col-4"> {this.props.item.taskCategory} </div>
 			}
 		
 		return (

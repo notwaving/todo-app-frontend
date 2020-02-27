@@ -4,16 +4,31 @@ import MyForm from './MyForm';
 import TasksLeft from './TasksLeft';
 import TaskListHeader from './TaskListHeader';
 import TaskList from './TaskList';
-import uuidv4 from 'uuid/v4';
+// import uuidv4 from 'uuid/v4';
+import axios from 'axios';
 
 class App extends React.Component {
 
   state = {
     tasks: [
-      { id: uuidv4(), description: "Do yoga", category: "Health", completed: false },
-      { id: uuidv4(), description: "Put on laundry", category: "Housework", completed: false },
-      { id: uuidv4(), description: "Email Beckie", category: "Admin", completed: false }
+      
     ]
+  }
+
+  componentDidMount = () => {
+    // Fetch tasks from API
+    // Make a request for a user with a given ID
+    axios.get('https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
+    .then((response) => {
+      // handle success
+      this.setState({
+        tasks: response.data.tasks
+      })
+    })
+    .catch((error) => {
+      // handle error
+      console.error(error);
+    });
   }
 
   deleteTask = (taskId) => {
@@ -49,10 +64,10 @@ class App extends React.Component {
   addTask = (taskDescription, taskCategory) => {
 
     const taskToAdd = {
-      id: uuidv4(),
+      // id: uuidv4(),
       description: taskDescription,
       category: taskCategory,
-      completed: false
+      completed: 0
     };
 
     console.log("Adding task");
