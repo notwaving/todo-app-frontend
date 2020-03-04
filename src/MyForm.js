@@ -3,7 +3,7 @@ import React from 'react';
 class MyForm extends React.Component {
 
   state = {
-    taskDescription: "Your task here",
+    taskDescription: "",
     taskCategory: ""
   }
 
