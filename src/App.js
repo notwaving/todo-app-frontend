@@ -63,10 +63,10 @@ class App extends React.Component {
   addTask = (taskDescription, taskCategory) => {
 
     const taskToAdd = {
-      // id: uuidv4(),
-      description: taskDescription,
-      category: taskCategory,
-      completed: 0
+      // taskID is created in the backend, no need to do so here
+      taskDescription: taskDescription,
+      taskCategory: taskCategory,
+      taskCompleted: 0
     };
 
     console.log("Adding task");

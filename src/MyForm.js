@@ -4,7 +4,7 @@ class MyForm extends React.Component {
 
   state = {
     taskDescription: "Your task here",
-    taskCategory: "Your category here"
+    taskCategory: ""
   }
 
   addTask = (event) => {
