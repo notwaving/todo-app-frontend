@@ -7,7 +7,7 @@ class TaskList extends React.Component {
             <div>
                 {this.props.taskList.map((taskItem) => 
                     <Tasks 
-                        key={taskItem.id} 
+                        key={taskItem.taskID} 
                         item={taskItem} 
                         deleteTaskFunc={this.props.deleteTaskFunc} 
                         editTaskFunc={this.props.editTaskFunc} 

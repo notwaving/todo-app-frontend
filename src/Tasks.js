@@ -3,11 +3,11 @@ import React from "react"
 class Tasks extends React.Component {
 
 	doneClicked = () => {
-		this.props.deleteTaskFunc(this.props.item.id)
+		this.props.deleteTaskFunc(this.props.item.taskID)
 	}
 
 	editClicked = () => {
-		this.props.editTaskFunc(this.props.item.id)
+		this.props.editTaskFunc(this.props.item.taskID)
 	}
 
 	render() {

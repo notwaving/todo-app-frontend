@@ -14,19 +14,18 @@ class App extends React.Component {
       
     ]
   }
-
+  // When component mounts, trigger this...
   componentDidMount = () => {
     // Fetch tasks from API
-    // Make a request for a user with a given ID
     axios.get('https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
     .then((response) => {
-      // handle success
+      // Handle success
       this.setState({
         tasks: response.data.tasks
       })
     })
     .catch((error) => {
-      // handle error
+      // Handle error
       console.error(error);
     });
   }
