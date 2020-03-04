@@ -64,6 +64,8 @@ class App extends React.Component {
         case task.taskCompleted === 1:
           task.taskCompleted = 0;
           break;
+        default:
+          break;
       }
     }
 
