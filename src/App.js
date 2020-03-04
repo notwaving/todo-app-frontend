@@ -69,18 +69,28 @@ class App extends React.Component {
       taskCompleted: 0
     };
 
-    console.log("Adding task");
-    console.log(taskToAdd);
+    axios.post('https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/', taskToAdd)
+    .then((response) => {
+      // Get backeend to pass on taskID to frontend
+      taskToAdd.taskID = response.data.task.taskID;
 
-    const currentTasks = this.state.tasks;
+      console.log(taskToAdd);
+      // Get the current list of tasks from state
+      const currentTasks = this.state.tasks;
+      // Add taskToAdd to the array
+      currentTasks.push(taskToAdd);
 
-    currentTasks.push(taskToAdd);
-
-    this.setState({
+      // Update the state
+      this.setState({
       tasks: currentTasks
+      });
+    })
+    .catch((error) => {
+      // Handle error
+      console.error(error);
     });
 
-  }
+  };
 
   render() {
     return (
