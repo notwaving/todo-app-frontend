@@ -4,7 +4,6 @@ import MyForm from './MyForm';
 import TasksLeft from './TasksLeft';
 import TaskListHeader from './TaskListHeader';
 import TaskList from './TaskList';
-// import uuidv4 from 'uuid/v4';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -72,7 +71,7 @@ class App extends React.Component {
     axios.post('https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/', taskToAdd)
     .then((response) => {
       // Get backeend to pass on taskID to frontend
-      taskToAdd.taskID = response.data.task.taskID;
+      taskToAdd.taskID = response.data.tasks.taskID;
 
       console.log(taskToAdd);
       // Get the current list of tasks from state
