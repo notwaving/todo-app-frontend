@@ -29,15 +29,26 @@ class App extends React.Component {
     });
   }
 
-  deleteTask = (taskId) => {
-
+  deleteTask = (taskID) => {
+    // Get the list of tasks from state
     const tasks = this.state.tasks;
-
-    const updatedTasks = tasks.filter(item => item.id !== taskId);
-
-    this.setState({
-      tasks: updatedTasks
+    
+    // Sample DELETE request
+    // https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/07afe600-7d84-4502-9520-df2995dce0aa
+    axios.delete(`https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskID}`)
+    .then((response) => {
+      // Identify the task that matches the given taskID and remove it
+      const updatedTasks = tasks.filter(item => item.taskID !== taskID);
+    // Update the state with the new collection of tasks (i.e. without the one we just removed)
+      this.setState({
+        tasks: updatedTasks
+      });
+    })
+    .catch((error) => {
+      // Handle error
+      console.error(error);
     });
+    
   }
 
   editTaskFunc = (taskID) => {
