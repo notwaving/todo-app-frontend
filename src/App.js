@@ -56,11 +56,14 @@ class App extends React.Component {
     const tasks = this.state.tasks; // Array of tasks
     for(let i = 0; i < tasks.length; i++) {
       const task = tasks[i];
-      
-      if(task.id === taskID) {
-        // Update the property (or properties) on the identified task
-        task.completed = true;
-        break;
+      // Toggle taskCompleted true or false with a switch case
+      switch(task.taskID === taskID){
+        case task.taskCompleted === 0:
+          task.taskCompleted = 1;
+          break;
+        case task.taskCompleted === 1:
+          task.taskCompleted = 0;
+          break;
       }
     }
 

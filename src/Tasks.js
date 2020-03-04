@@ -15,7 +15,7 @@ class Tasks extends React.Component {
 		let description;
 		let category;
 
-    if (this.props.item.completed) {
+    if (this.props.item.taskCompleted) {
 			description = <div className="col-4 completedTask"> {this.props.item.taskDescription} </div>
 			category = <div className="col-4 completedTask"> {this.props.item.taskCategory}</div>
 			} 
