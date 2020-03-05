@@ -15,6 +15,7 @@ class App extends React.Component {
   }
   // When component mounts, trigger this...
   componentDidMount = () => {
+
     // Fetch tasks from API
     axios.get('https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/')
     .then((response) => {
@@ -51,28 +52,46 @@ class App extends React.Component {
     
   }
 
-  editTaskFunc = (taskID) => {
-    // Find the task that needs to be updated
-    const tasks = this.state.tasks; // Array of tasks
-    for(let i = 0; i < tasks.length; i++) {
-      const task = tasks[i];
-      // Toggle taskCompleted true or false with a switch case
-      switch(task.taskID === taskID){
-        case task.taskCompleted === 0:
-          task.taskCompleted = 1;
-          break;
-        case task.taskCompleted === 1:
-          task.taskCompleted = 0;
-          break;
-        default:
-          break;
-      }
-    }
+  editTaskFunc = (taskID, taskToEdit) => {
 
-    // Update state to reflect changes made to the task
-    this.setState({
-      tasks: tasks
+    axios.post(`https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskID}`, taskToEdit)
+    .then((response) => {
+      const tasks = this.state.tasks;
+      for(let i = 0; i < tasks.length; i++) {
+        const taskToEdit = tasks[i];
+        // Toggle taskCompleted true or false with a switch case
+        switch(taskToEdit.taskID === taskID){
+          case taskToEdit.taskCompleted === 0:
+            taskToEdit.taskCompleted = 1;
+            break;
+          case taskToEdit.taskCompleted === 1:
+            taskToEdit.taskCompleted = 0;
+            break;
+          default:
+            break;
+        }
+      }
+
+      // Get backeend to pass on taskID to frontend
+      taskToEdit.taskID = response.data.tasks.taskID;
+
+      console.log(taskToEdit);
+      // Get the current list of tasks from state
+      const currentTasks = this.state.tasks;
+      // Add taskToAdd to the array
+      currentTasks.push(taskToEdit);
+
+      // Update the state
+      this.setState({
+      tasks: currentTasks
+      });
     })
+    .catch((error) => {
+      // Handle error
+      console.error(error);
+    });    
+    // Update state to reflect changes made to the task
+    
   }
 
   addTask = (taskDescription, taskCategory) => {
