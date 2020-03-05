@@ -54,11 +54,16 @@ class App extends React.Component {
 
   editTaskFunc = (taskID, taskToEdit) => {
 
-    axios.post(`https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskID}`, taskToEdit)
+    axios.put(`https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskID}`, taskToEdit)
     .then((response) => {
-      const tasks = this.state.tasks;
-      for(let i = 0; i < tasks.length; i++) {
-        const taskToEdit = tasks[i];
+
+      // Get backeend to pass on taskID to frontend
+      taskToEdit.taskID = response.data.tasks.taskID;
+
+      // Go through array of tasks until you find the one selected
+      // const tasks = this.state.tasks;
+      // for(let i = 0; i < tasks.length; i++) {
+      //   const taskToEdit = tasks[i];
         // Toggle taskCompleted true or false with a switch case
         switch(taskToEdit.taskID === taskID){
           case taskToEdit.taskCompleted === 0:
@@ -70,12 +75,10 @@ class App extends React.Component {
           default:
             break;
         }
-      }
+      //}
+      
 
-      // Get backeend to pass on taskID to frontend
-      taskToEdit.taskID = response.data.tasks.taskID;
-
-      console.log(taskToEdit);
+      //console.log(taskToEdit);
       // Get the current list of tasks from state
       const currentTasks = this.state.tasks;
       // Add taskToAdd to the array
