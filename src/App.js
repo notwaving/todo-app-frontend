@@ -53,49 +53,76 @@ class App extends React.Component {
   }
 
   editTaskFunc = (taskID, taskToEdit) => {
-
     axios.put(`https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskID}`, taskToEdit)
-    .then((response) => {
-
-      // Get backeend to pass on taskID to frontend
-      taskToEdit.taskID = response.data.tasks.taskID;
-
-      // Go through array of tasks until you find the one selected
-      // const tasks = this.state.tasks;
-      // for(let i = 0; i < tasks.length; i++) {
-      //   const taskToEdit = tasks[i];
-        // Toggle taskCompleted true or false with a switch case
-        switch(taskToEdit.taskID === taskID){
-          case taskToEdit.taskCompleted === 0:
-            taskToEdit.taskCompleted = 1;
+      .then((response) => {
+        // Get the state of our tasks
+        const currentTasks = this.state.tasks;
+        // Loop through the tasks to find the correct matching object
+        for(let i = 0; i < currentTasks.length; i++) {
+          const task = currentTasks[i];
+          if(task.taskID === taskID) {
+            // Once found a match, update the completed property
+            task.taskCompleted = 1;
+            // Break out as no need to check anymore
             break;
-          case taskToEdit.taskCompleted === 1:
-            taskToEdit.taskCompleted = 0;
-            break;
-          default:
-            break;
+          }
         }
-      //}
+        // Update the state
+        this.setState({
+          tasks: currentTasks
+        });
+      })
+      .catch((error) => {
+        // Handle error
+        console.error(error);
+      });
+    // Update state to reflect changes made to the task
+  }
+
+  // editTaskFunc = (taskID, taskToEdit) => {
+
+  //   axios.put(`https://khp5u5qhka.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskID}`, taskToEdit)
+  //   .then((response) => {
+
+  //     // Get backeend to pass on taskID to frontend
+  //     taskToEdit.taskID = response.data.tasks.taskID;
+
+  //     // Go through array of tasks until you find the one selected
+  //     // const tasks = this.state.tasks;
+  //     // for(let i = 0; i < tasks.length; i++) {
+  //     //   const taskToEdit = tasks[i];
+  //       // Toggle taskCompleted true or false with a switch case
+  //       switch(taskToEdit.taskID === taskID){
+  //         case taskToEdit.taskCompleted === 0:
+  //           taskToEdit.taskCompleted = 1;
+  //           break;
+  //         case taskToEdit.taskCompleted === 1:
+  //           taskToEdit.taskCompleted = 0;
+  //           break;
+  //         default:
+  //           break;
+  //       }
+  //     //}
       
 
-      //console.log(taskToEdit);
-      // Get the current list of tasks from state
-      const currentTasks = this.state.tasks;
-      // Add taskToAdd to the array
-      currentTasks.push(taskToEdit);
+  //     //console.log(taskToEdit);
+  //     // Get the current list of tasks from state
+  //     const currentTasks = this.state.tasks;
+  //     // Add taskToAdd to the array
+  //     currentTasks.push(taskToEdit);
 
-      // Update the state
-      this.setState({
-      tasks: currentTasks
-      });
-    })
-    .catch((error) => {
-      // Handle error
-      console.error(error);
-    });    
-    // Update state to reflect changes made to the task
+  //     // Update the state
+  //     this.setState({
+  //     tasks: currentTasks
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     // Handle error
+  //     console.error(error);
+  //   });    
+  //   // Update state to reflect changes made to the task
     
-  }
+  // }
 
   addTask = (taskDescription, taskCategory) => {
 
